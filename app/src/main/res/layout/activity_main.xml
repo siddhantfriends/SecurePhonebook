@@ -10,10 +10,26 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contact List"
-        android:id="@+id/btncontactlist"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
+        android:text="View All Contacts"
+        android:id="@+id/btnviewallcontacts"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="26dp"
+        android:layout_alignRight="@+id/btnregisternewcontact"
+        android:layout_alignEnd="@+id/btnregisternewcontact">
+    </Button>
+
+    #Create A New Contact Button
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register New Contact"
+        android:id="@+id/btnregisternewcontact"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/btnviewallcontacts"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
     </Button>
 
     #Create A Search Bar
