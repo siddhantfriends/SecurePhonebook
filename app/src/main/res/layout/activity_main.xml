@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="View All Contacts"
         android:id="@+id/btnviewallcontacts"
+
         android:layout_below="@+id/toolbar"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -26,6 +27,7 @@
         android:layout_height="wrap_content"
         android:text="Register New Contact"
         android:id="@+id/btnregisternewcontact"
+        android:onClick="LoadAddActivity"
         android:layout_marginTop="26dp"
         android:layout_below="@+id/btnviewallcontacts"
         android:layout_alignParentLeft="true"
