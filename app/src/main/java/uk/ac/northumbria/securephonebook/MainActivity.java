@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     public void LoadAddActivity (View V) {
         startActivity(new Intent(this, AddActivity.class));
     }
-
+    public void LoadContactsActivity (View V) { startActivity(new Intent(this,ContactsActivity.class));}
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_item, menu);

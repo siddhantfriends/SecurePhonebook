@@ -7,19 +7,20 @@
     tools:context="uk.ac.northumbria.securephonebook.MainActivity">
 
     #Create A Contact List Button
+
     <Button
+        android:id="@+id/btnviewallcontacts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View All Contacts"
-        android:id="@+id/btnviewallcontacts"
+        android:layout_alignEnd="@+id/btnregisternewcontact"
 
-        android:layout_below="@+id/toolbar"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="26dp"
         android:layout_alignRight="@+id/btnregisternewcontact"
-        android:layout_alignEnd="@+id/btnregisternewcontact">
-    </Button>
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="28dp"
+        android:onClick="LoadContactsActivity"
+        android:text="View All Contacts"></Button>
 
     #Create A New Contact Button
     <Button
@@ -28,7 +29,7 @@
         android:text="Register New Contact"
         android:id="@+id/btnregisternewcontact"
         android:onClick="LoadAddActivity"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="28dp"
         android:layout_below="@+id/btnviewallcontacts"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
