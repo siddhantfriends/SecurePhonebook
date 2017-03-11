@@ -19,7 +19,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String FIELD_SURNAME = "surname";
     public static final String FIELD_TELEPHONE = "telephone";
     public static final String FIELD_EMAIL = "email";
-    public static final String QUERY_CREATE = "CREATE TABLE "+TABLE_NAME+" ( "+FIELD_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+FIELD_FIRSTNAME+" VARCHAR (100),"+FIELD_SURNAME+" VARCHAR (100), "+FIELD_TELEPHONE+" VARCHAR (100), "+FIELD_EMAIL+" VARCHAR (100) )";
+    public static final String QUERY_CREATE = "CREATE TABLE "+TABLE_NAME+"("+FIELD_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+FIELD_FIRSTNAME+" VARCHAR (100),"+FIELD_SURNAME+" VARCHAR (100), "+FIELD_TELEPHONE+" VARCHAR (100), "+FIELD_EMAIL+" VARCHAR (100) )";
 
     public DBHelper(Context context) {
         super(context, DATABASE_NAME , null , DATABASE_VERSION);

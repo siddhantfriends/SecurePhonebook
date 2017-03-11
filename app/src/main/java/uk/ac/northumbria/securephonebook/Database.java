@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 
 public class Database {
-    public static final String TABLE_NAME = "contacts";
+    public static final String TABLE_NAME = "contact";
     public static final String FIELD_ID = "_id";
     public static final String FIELD_FIRSTNAME = "firstname";
     public static final String FIELD_SURNAME = "surname";
@@ -45,14 +45,14 @@ public class Database {
         String[] col = {FIELD_FIRSTNAME,FIELD_SURNAME,FIELD_EMAIL,FIELD_TELEPHONE};
         Cursor cu = db.query(TABLE_NAME,col,null,null,null,null,null);
         cu.moveToFirst();
-        while ( cu.moveToNext()){
+        while ( cu.moveToNext()) {
             String firstname = cu.getString(cu.getColumnIndex(FIELD_FIRSTNAME));
             String surname = cu.getString(cu.getColumnIndex(FIELD_SURNAME));
             String email = cu.getString(cu.getColumnIndex(FIELD_EMAIL));
             String telephone = cu.getString(cu.getColumnIndex(FIELD_TELEPHONE));
-            String row = firstname+""+surname+""+email+""+telephone;
+            String row = firstname+" "+surname+" "+email+" "+telephone;
             data.add(row);
-    }
+        }
         return data;
     }
 }
