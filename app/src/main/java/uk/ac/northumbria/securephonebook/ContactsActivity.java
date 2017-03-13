@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import net.sqlcipher.Cursor;
+import net.sqlcipher.database.SQLiteDatabase;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +26,7 @@ public class ContactsActivity extends AppCompatActivity {
         lv = (ListView) findViewById(R.id.listView);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        SQLiteDatabase.loadLibs(this);
 
         Database database = new Database(this);
         aL = database.getAllContacts();

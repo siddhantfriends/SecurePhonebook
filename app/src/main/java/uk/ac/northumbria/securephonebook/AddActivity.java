@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import net.sqlcipher.database.SQLiteDatabase;
+
 public class AddActivity extends AppCompatActivity {
 
     Database database;
@@ -20,6 +22,9 @@ public class AddActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
+        SQLiteDatabase.loadLibs(this);
+
+
         database = new Database(this);
         etFirstname = (EditText) findViewById(R.id.firstnametext);
         etSurname = (EditText)findViewById(R.id.surnametext);
@@ -31,7 +36,8 @@ public class AddActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
     }
     public void saveData (View V){
-            String firstname = etFirstname.getText().toString();
+        SQLiteDatabase db = DBHelper.getInstance(this).getWritableDatabase("Password1");
+        String firstname = etFirstname.getText().toString();
             String surname = etSurname.getText().toString();
             String email = etEmail.getText().toString();
             String telephone = etTelephone.getText().toString();
