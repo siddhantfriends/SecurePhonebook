@@ -1,5 +1,6 @@
 package uk.ac.northumbria.securephonebook;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.view.View;
 
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
+import net.sqlcipher.database.SQLiteDatabase;
+
 
 public class MainActivity extends AppCompatActivity {
     MaterialSearchView searchView;
@@ -21,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SQLiteDatabase.loadLibs(this);
 
         Database database = new Database(this);
 

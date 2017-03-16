@@ -1,12 +1,13 @@
 package uk.ac.northumbria.securephonebook;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
+import net.sqlcipher.database.SQLiteDatabase;
+import net.sqlcipher.database.SQLiteOpenHelper;
 
 /**
  * Created by Michael on 10/03/2017.
  */
+
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -34,6 +35,5 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
     }
 }
