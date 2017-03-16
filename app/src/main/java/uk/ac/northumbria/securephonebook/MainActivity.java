@@ -12,6 +12,7 @@ import android.view.View;
 
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
+
 public class MainActivity extends AppCompatActivity {
     MaterialSearchView searchView;
 

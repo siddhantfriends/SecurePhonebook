@@ -22,8 +22,6 @@ public class AddActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
-        SQLiteDatabase.loadLibs(this);
-
 
         database = new Database(this);
         etFirstname = (EditText) findViewById(R.id.firstnametext);
@@ -36,7 +34,6 @@ public class AddActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
     }
     public void saveData (View V){
-        SQLiteDatabase db = DBHelper.getInstance(this).getWritableDatabase("Password1");
         String firstname = etFirstname.getText().toString();
             String surname = etSurname.getText().toString();
             String email = etEmail.getText().toString();

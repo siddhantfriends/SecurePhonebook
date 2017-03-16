@@ -3,8 +3,8 @@ package uk.ac.northumbria.securephonebook;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import net.sqlcipher.database.SQLiteDatabase;
-import net.sqlcipher.database.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 
 import java.util.ArrayList;
 
@@ -25,7 +25,6 @@ public class Database {
     DBHelper dbhelper;
 
 
-
     public Database(Context context) {
         con = context;
         dbhelper = new DBHelper(con);
@@ -34,7 +33,7 @@ public class Database {
 
 
     public void addContact(String firstname, String surname, String telephone, String email) {
-        SQLiteDatabase db = dbhelper.getWritableDatabase("Password1");
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
         //db.execSQL("insert into contacts (_id, firstname, secondname, telephone) values ('','Abc','123')");");
         ContentValues values = new ContentValues();
         values.put(FIELD_FIRSTNAME, firstname);
@@ -47,7 +46,7 @@ public class Database {
 
     public ArrayList<String> getAllContacts(){
         ArrayList<String> data = new ArrayList<>();
-        SQLiteDatabase db = dbhelper.getWritableDatabase("Password1");
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
         String[] col = {FIELD_FIRSTNAME,FIELD_SURNAME,FIELD_EMAIL,FIELD_TELEPHONE};
         Cursor cu = db.query(TABLE_NAME,col,null,null,null,null,null);
         cu.moveToFirst();
