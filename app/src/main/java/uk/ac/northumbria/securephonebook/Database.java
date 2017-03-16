@@ -49,15 +49,19 @@ public class Database {
         SQLiteDatabase db = dbhelper.getWritableDatabase();
         String[] col = {FIELD_FIRSTNAME,FIELD_SURNAME,FIELD_EMAIL,FIELD_TELEPHONE};
         Cursor cu = db.query(TABLE_NAME,col,null,null,null,null,null);
-        cu.moveToFirst();
-        while ( cu.moveToNext()) {
-            String firstname = cu.getString(cu.getColumnIndex(FIELD_FIRSTNAME));
-            String surname = cu.getString(cu.getColumnIndex(FIELD_SURNAME));
-            String email = cu.getString(cu.getColumnIndex(FIELD_EMAIL));
-            String telephone = cu.getString(cu.getColumnIndex(FIELD_TELEPHONE));
-            String row = firstname+" "+surname+" "+email+" "+telephone;
-            data.add(row);
+
+        if (cu.getCount() > 0) {
+            cu.moveToFirst();
+            do {
+                String firstname = cu.getString(cu.getColumnIndex(FIELD_FIRSTNAME));
+                String surname = cu.getString(cu.getColumnIndex(FIELD_SURNAME));
+                String email = cu.getString(cu.getColumnIndex(FIELD_EMAIL));
+                String telephone = cu.getString(cu.getColumnIndex(FIELD_TELEPHONE));
+                String row = firstname+" "+surname+" "+email+" "+telephone;
+                data.add(row);
+            } while ( cu.moveToNext());
         }
+
         return data;
     }
 }
